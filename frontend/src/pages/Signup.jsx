@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function Signup() {
   
-  const [Values, setValues] = useState({username:"",email:"",password:"",address:""});
+  const [Values, setValues] = useState({username:"",email:"",phoneNumber:"",password:"",address:""});
   const navigate = useNavigate();
   const change = (e) =>{
    const {id, value} = e.target;
@@ -16,7 +16,7 @@ function Signup() {
     
     try
     {
-       if(Values.username === "" || Values.email === "" || Values.address === "" || Values.password === "" ){
+       if(Values.username === "" || Values.email === "" || Values.phoneNumber == "" || Values.address === "" || Values.password === "" ){
         
         alert("All fields are required");
        }
@@ -59,6 +59,19 @@ function Signup() {
               type="email"
               id="email"
               value={Values.email}
+              onChange={change}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              
+            />
+          </div>
+          <div>
+            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              id="phoneNumber"
+              value={Values.phoneNumber}
               onChange={change}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               

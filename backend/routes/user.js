@@ -12,7 +12,7 @@ const secretKey = 'bookstore123';
 router.post('/signup', async(req,res) => {
     try
     {
-        const {username, email, password, address} = req.body;
+        const {username, email, password, address, phoneNumber} = req.body;
 
         if(username.length < 4){return res.status(400).json({message : "length should be greater than 4"});}
         
@@ -32,6 +32,7 @@ router.post('/signup', async(req,res) => {
         const newUser = new User({
             username : username,
             email : email,
+            phoneNumber : phoneNumber,
             password : hasspassword,
             address : address,
         });

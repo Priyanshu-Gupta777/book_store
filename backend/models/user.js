@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const user = new mongoose.Schema({
     username : { type:String, required : true},
     email :  { type:String, required : true, unique: true},
+    phoneNumber : {type:Number, required:true},
     password :  { type:String, required : true},
     address :  { type:String, required : true},
     avatar :  { type:String, default : 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-96392.jpg?size=626&ext=jpg&ga=GA1.1.2117048058.1727968147&semt=ais_hybrid'},
